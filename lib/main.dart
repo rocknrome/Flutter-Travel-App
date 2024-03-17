@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/screens/home_screen.dart'; //this means the file has to be in "Lib" directory
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -15,13 +14,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Travel App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xFF3EBACE),
-        scaffoldBackgroundColor: Color(0xFFF3F5F7),
+        primaryColor: const Color(0xFF3EBACE),
+        scaffoldBackgroundColor: const Color(0xFFF3F5F7),
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          secondary: Color(0xFFD8ECF1), // This is the correct way to set a secondary color.
+          secondary: const Color(
+              0xFFD8ECF1),
         ),
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

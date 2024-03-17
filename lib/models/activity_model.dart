@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+//Activity Model
 
 class Activity {
   final String imageUrl;
