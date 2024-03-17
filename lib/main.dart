@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_travel_app/screens/home_screen.dart';
+import 'package:travel_app/screens/home_screen.dart'; //this means the file has to be in "Lib" directory
+
 
 void main() {
   runApp(const MyApp());
