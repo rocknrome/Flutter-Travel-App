@@ -54,9 +54,9 @@ class HomeScreenState extends State<HomeScreen> {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 30.0),
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0, right: 120.0),
-              child: const Text(
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 120.0),
+              child: Text(
                 'What would you like to find?',
                 style: TextStyle(
                   fontSize: 30.0,
@@ -74,7 +74,7 @@ class HomeScreenState extends State<HomeScreen> {
                   .toList(),
             ),
             const SizedBox(height: 20.0),
-            DestinationCarousel(),
+            const DestinationCarousel(),
           ],
         ),
       ),
