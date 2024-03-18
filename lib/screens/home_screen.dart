@@ -8,8 +8,8 @@ class HomeScreen extends StatefulWidget {
   HomeScreenState createState() => HomeScreenState();
 }
 
-class HomeScreenState extends State<HomeScreen> { // Made public
-  int _selectedIndex = 0; // Indicate selection, possibly for future use.
+class HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
 
   final List<IconData> _icons = [
     FontAwesomeIcons.plane,
@@ -24,12 +24,13 @@ class HomeScreenState extends State<HomeScreen> { // Made public
         setState(() {
           _selectedIndex = index;
         });
+        print(_selectedIndex); // Checking if icons are clickable and changing the index
       },
       child: Container(
         height: 60.0,
         width: 60.0,
         decoration: BoxDecoration(
-          color: _selectedIndex == index // Use _selectedIndex for color change
+          color: _selectedIndex == index // Changing colors of the icons
               ? Theme.of(context).colorScheme.secondary
               : const Color(0xFFE7EBEE),
           borderRadius: BorderRadius.circular(30.0),
@@ -37,7 +38,7 @@ class HomeScreenState extends State<HomeScreen> { // Made public
         child: Icon(
           _icons[index],
           size: 25.0,
-          color: _selectedIndex == index // Use _selectedIndex for color change
+          color: _selectedIndex == index // Changing colors of the icons
               ? Theme.of(context).primaryColor
               : const Color(0xFFB4C1C4),
         ),
@@ -61,11 +62,38 @@ class HomeScreenState extends State<HomeScreen> { // Made public
             const SizedBox(height: 20.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: _icons
-                  .asMap()
-                  .entries
-                  .map((MapEntry map) => _buildIcon(map.key))
-                  .toList(),
+              children: _icons.asMap().entries.map((MapEntry map) => _buildIcon(map.key)).toList(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'Top Destinations',
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Handle See All tap
+                      print('See All tapped');
+                    },
+                    child: Text(
+                      'See All',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1.0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
