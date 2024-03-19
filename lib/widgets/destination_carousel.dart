@@ -40,9 +40,9 @@ class DestinationCarousel extends StatelessWidget {
             ],
           ),
         ),
-        Container(
+        SizedBox(
           height: 320.0,
-          color: Colors.blue, // FOR TESTING PURPOSES
+          //color: Colors.blue, // FOR TESTING PURPOSES
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: destinations.length,
@@ -81,7 +81,7 @@ class DestinationCarousel extends StatelessWidget {
                                 overflow: TextOverflow
                                     .ellipsis, // Adds ellipsis if text overflows
                               ),
-                              Container(
+                              SizedBox(
                                 height:
                                     45.0, // Fixed height for the description text container
                                 child: Text(
