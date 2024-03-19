@@ -55,9 +55,10 @@ class DestinationCarousel extends StatelessWidget {
                   alignment: Alignment.topCenter,
                   children: <Widget>[
                     Positioned(
-                      bottom: 15.0,
+                      bottom: 10.0,
                       child: Container(
-                        height: 120.0,
+                        height:
+                            120.0, // Fixed height Container to wrap the description for consistent look of cards' description
                         width: 200.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -76,11 +77,21 @@ class DestinationCarousel extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   letterSpacing: 1.2,
                                 ),
+                                maxLines: 1, // Ensures this text does not wrap
+                                overflow: TextOverflow
+                                    .ellipsis, // Adds ellipsis if text overflows
                               ),
-                              Text(
-                                destination.description,
-                                style: const TextStyle(
-                                  color: Colors.grey,
+                              Container(
+                                height:
+                                    45.0, // Fixed height for the description text container
+                                child: Text(
+                                  destination.description,
+                                  style: const TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines:
+                                      3, // Allows for up to 3 lines of text
                                 ),
                               ),
                             ],
