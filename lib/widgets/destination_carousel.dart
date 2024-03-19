@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/models/destination_model.dart'; // Ensure this import path is correct
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:travel_app/models/destination_model.dart';
 
 class DestinationCarousel extends StatelessWidget {
   const DestinationCarousel({Key? key}) : super(key: key);
@@ -54,9 +55,9 @@ class DestinationCarousel extends StatelessWidget {
                   alignment: Alignment.topCenter,
                   children: <Widget>[
                     Positioned(
-                      bottom: 0.0,
+                      bottom: 15.0,
                       child: Container(
-                        height: 140.0,
+                        height: 120.0,
                         width: 200.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -70,7 +71,7 @@ class DestinationCarousel extends StatelessWidget {
                             children: <Widget>[
                               Text(
                                 '${destination.activities.length} activities',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 22.0,
                                   fontWeight: FontWeight.w600,
                                   letterSpacing: 1.2,
@@ -78,7 +79,7 @@ class DestinationCarousel extends StatelessWidget {
                               ),
                               Text(
                                 destination.description,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.grey,
                                 ),
                               ),
@@ -88,8 +89,9 @@ class DestinationCarousel extends StatelessWidget {
                       ),
                     ),
                     Container(
+                      height: 190.0,
+                      width: 190.0,
                       decoration: BoxDecoration(
-                        color: Colors.white,
                         borderRadius: BorderRadius.circular(20.0),
                         boxShadow: const [
                           BoxShadow(
@@ -102,11 +104,47 @@ class DestinationCarousel extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
                         child: Image(
-                          height: 180.0,
-                          width: 180.0,
                           image: AssetImage(destination.imageUrl),
                           fit: BoxFit.cover,
                         ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20.0,
+                      bottom: 120.0,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            destination.city,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 24.0,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1.2,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              const Icon(
+                                FontAwesomeIcons.locationArrow,
+                                size: 10.0,
+                                color: Colors.white,
+                              ),
+                              const SizedBox(width: 5.0),
+                              Text(
+                                destination.country,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 1.2,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ],
