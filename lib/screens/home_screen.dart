@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../widgets/destination_carousel.dart'; //another way of connecting the file
-import '../widgets/hotel_carousel.dart'; //another way of connecting the file
+import '../widgets/hotel_carousel.dart'; //another way of connecting the files
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

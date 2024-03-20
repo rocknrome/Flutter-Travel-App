@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:travel_app/models/destination_model.dart';
+import 'package:travel_app/models/hotel_model.dart';
 
 class HotelCarousel extends StatelessWidget {
   const HotelCarousel({super.key});
@@ -45,9 +44,9 @@ class HotelCarousel extends StatelessWidget {
           //color: Colors.blue, // FOR TESTING PURPOSES
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: destinations.length,
+            itemCount: hotels.length,
             itemBuilder: (BuildContext context, int index) {
-              Destination destination = destinations[index];
+              Hotel hotel = hotels[index];
               return Container(
                 width: 210.0,
                 margin: const EdgeInsets.all(10.0),
@@ -71,28 +70,36 @@ class HotelCarousel extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                '${destination.activities.length} activities',
+                                hotel.name,
                                 style: const TextStyle(
-                                  fontSize: 22.0,
+                                  fontSize: 20.0,
                                   fontWeight: FontWeight.w600,
                                   letterSpacing: 1.2,
                                 ),
-                                maxLines: 1, // Ensures this text does not wrap
+                                maxLines: 1, // Ensures the text does not wrap
                                 overflow: TextOverflow
                                     .ellipsis, // Adds ellipsis if text overflows
                               ),
-                              SizedBox(
-                                height:
-                                    45.0, // Fixed height for the description text container
-                                child: Text(
-                                  destination.description,
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines:
-                                      3, // Allows for up to 3 lines of text
+                              const SizedBox(
+                                  height:
+                                      4.0), // Provides spacing between hotel name and address
+                              Text(
+                                hotel.address,
+                                style: const TextStyle(
+                                  color: Colors.grey,
                                 ),
+                                maxLines:
+                                    3, // Adjusted to 3 lines to fit the address
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const SizedBox(
+                                  height:
+                                      4.0), // Provides spacing between address and price
+                              Text(
+                                '\$${hotel.price} / night',
+                                style: const TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w600),
                               ),
                             ],
                           ),
@@ -115,7 +122,7 @@ class HotelCarousel extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
                         child: Image(
-                          image: AssetImage(destination.imageUrl),
+                          image: AssetImage(hotel.imageUrl),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -123,7 +130,7 @@ class HotelCarousel extends StatelessWidget {
                   ],
                 ),
               );
-            }, 
+            },
           ),
         ),
       ],
