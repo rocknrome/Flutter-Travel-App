@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color(0xFF3EBACE),
         scaffoldBackgroundColor: const Color(0xFFF3F5F7),
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          secondary: const Color(
-              0xFFD8ECF1),
+          secondary: const Color(0xFFD8ECF1),
         ),
       ),
       home: const HomeScreen(),

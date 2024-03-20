@@ -110,7 +110,7 @@ class DestinationScreenState extends State<DestinationScreen> {
                           Text(
                             widget.destination.country,
                             style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.white70,
                               fontSize: 20.0,
                             ),
                           ),
