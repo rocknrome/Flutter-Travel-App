@@ -123,7 +123,7 @@ class HotelCarousel extends StatelessWidget {
                   ],
                 ),
               );
-            },
+            }, 
           ),
         ),
       ],
