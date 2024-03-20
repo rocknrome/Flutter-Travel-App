@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../widgets/destination_carousel.dart'; //another way of connecting the file
+import '../widgets/hotel_carousel.dart'; //another way of connecting the file
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -75,6 +76,8 @@ class HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 20.0),
             const DestinationCarousel(),
+            const SizedBox(height: 20.0),
+            const HotelCarousel(),
           ],
         ),
       ),

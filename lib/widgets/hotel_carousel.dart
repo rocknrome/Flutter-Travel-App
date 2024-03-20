@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:travel_app/models/destination_model.dart';
 
 class HotelCarousel extends StatelessWidget {
+  const HotelCarousel({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -11,7 +15,7 @@ class HotelCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                'Top Destinations',
+                'Exclusive Hotels',
                 style: TextStyle(
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold,
@@ -114,44 +118,6 @@ class HotelCarousel extends StatelessWidget {
                           image: AssetImage(destination.imageUrl),
                           fit: BoxFit.cover,
                         ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 20.0,
-                      bottom: 120.0,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            destination.city,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 24.0,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 1.2,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              const Icon(
-                                FontAwesomeIcons.locationArrow,
-                                size: 10.0,
-                                color: Colors.white,
-                              ),
-                              const SizedBox(width: 5.0),
-                              Text(
-                                destination.country,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: 1.2,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
                       ),
                     ),
                   ],
