@@ -48,7 +48,7 @@ class HotelCarousel extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               Hotel hotel = hotels[index];
               return Container(
-                width: 210.0,
+                width: 280.0,
                 margin: const EdgeInsets.all(10.0),
                 child: Stack(
                   alignment: Alignment.topCenter,
@@ -58,7 +58,7 @@ class HotelCarousel extends StatelessWidget {
                       child: Container(
                         height:
                             120.0, // Fixed height Container to wrap the description for consistent look of cards' description
-                        width: 200.0,
+                        width: 240.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10.0),
@@ -67,7 +67,7 @@ class HotelCarousel extends StatelessWidget {
                           padding: const EdgeInsets.all(10.0),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            //crossAxisAlignment: CrossAxisAlignment.start, //Centered the text
                             children: <Widget>[
                               Text(
                                 hotel.name,
@@ -108,7 +108,7 @@ class HotelCarousel extends StatelessWidget {
                     ),
                     Container(
                       height: 190.0,
-                      width: 190.0,
+                      width: 230.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
                         boxShadow: const [

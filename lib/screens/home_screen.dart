@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../widgets/destination_carousel.dart'; //another way of connecting the file
-import '../widgets/hotel_carousel.dart'; //another way of connecting the files
+import '../widgets/destination_carousel.dart';
+import '../widgets/hotel_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  int _currentTab = 0;
 
   final List<IconData> _icons = [
     FontAwesomeIcons.plane,
@@ -22,7 +23,6 @@ class HomeScreenState extends State<HomeScreen> {
 
   Widget _buildIcon(int index) {
     return GestureDetector(
-      //add links to destinations, hotels, activities later on
       onTap: () {
         setState(() {
           _selectedIndex = index;
@@ -80,6 +80,31 @@ class HomeScreenState extends State<HomeScreen> {
             const HotelCarousel(),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentTab,
+        onTap: (int value) {
+          setState(() {
+            _currentTab = value;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search, size: 30.0),
+            label: '', // Flutter 2.0+ format
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_pizza, size: 30.0),
+            label: '', // Flutter 2.0+ format
+          ),
+          BottomNavigationBarItem(
+            icon: CircleAvatar(
+              radius: 15.0,
+              backgroundImage: NetworkImage('https://i.imgur.com/Gw5wXu1.jpeg'),
+            ),
+            label: '', // Flutter 2.0+ format
+          ),
+        ],
       ),
     );
   }
