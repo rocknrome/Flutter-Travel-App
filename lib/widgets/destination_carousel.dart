@@ -27,10 +27,10 @@ class DestinationCarousel extends StatelessWidget {
                 onTap: () {
                   // Future implementation for "See All" action
                 },
-                child: Text( 
+                child: Text(
                   'See All',
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: Theme.of(context).primaryColor,
                     fontSize: 16.0,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1.0,
